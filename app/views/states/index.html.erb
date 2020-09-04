@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>States</h1>
+
+<div>
+  <select name="estados">
+    <% @states.each do |state| %>
+      <option value=><%= state.name %></option>
+    <% end %>
+  </select>
+</div>
+
+<p>
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@state.latitud},#{@se.longitud}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
+</p>
